@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nisumba Soodhani K — Ph.D. Candidate, Educational Technology</title>
+<meta name="description" content="Academic website of Nisumba Soodhani K, Ph.D. Candidate at the Centre for Educational Technology, IIT Bombay. Learning Sciences, Maker Education, Motivation, AI in Education.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:#181818;color:#e2e8f0;font-family:"Source Sans 3",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body.modal-open{overflow:hidden}
+a{color:#6ba3d6;text-decoration:none}
+a:hover{color:#93c5fd;text-decoration:underline}
+img{display:block;max-width:100%}
+
+/* Nav */
+.nav-link{padding:6px 10px;font-size:15px;color:#9ca3af;border-radius:6px;text-decoration:none}
+.nav-link:hover{background:#2a2a2a;color:#e2e8f0;text-decoration:none}
+
+/* Hamburger (mobile only) */
+.nav-toggle{display:none;flex-direction:column;align-items:center;justify-content:center;width:40px;height:40px;padding:0;background:transparent;border:1px solid #444;border-radius:8px;cursor:pointer}
+.nav-toggle:hover{background:#2a2a2a;border-color:#5a8fc2}
+.nav-toggle:focus-visible{outline:2px solid #5a8fc2;outline-offset:2px}
+.nav-toggle span{display:block;width:18px;height:2px;background:#e2e8f0;border-radius:2px;transition:transform .2s,opacity .2s}
+.nav-toggle span + span{margin-top:4px}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.nav-menu{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
+
+/* Hero buttons */
+.hero-btn{display:inline-flex;align-items:center;padding:7px 14px;font-size:13.5px;font-weight:600;color:#e2e8f0;background:#222;border:1px solid #444;border-radius:6px;text-decoration:none;transition:background .15s,border-color .15s}
+.hero-btn:hover{background:#5a8fc2;border-color:#5a8fc2;color:#fff;text-decoration:none}
+
+/* Section headings */
+.section-title{margin:0 0 6px;font-family:'Source Serif 4',serif;font-size:32px;font-weight:600;letter-spacing:-0.015em;color:#e2e8f0}
+.section-sub{margin:0 0 24px;font-size:16.5px;color:#6b7280;max-width:62ch}
+.sub-head{margin:0 0 14px;font-size:14px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#5a8fc2}
+
+/* Cards */
+.card{background:#222;border:1px solid #333;border-radius:10px;padding:20px 22px}
+.card:hover{border-color:#444}
+.paper-card{background:#222;border:1px solid #333;border-radius:10px;padding:20px 22px}
+.paper-card:hover{border-color:#555}
+
+/* Entry rows: label left, year right */
+.entry-row{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;justify-content:space-between}
+.entry-name{font-size:16.5px;font-weight:600;color:#e2e8f0;flex:1 1 200px}
+.entry-year{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6b7280;flex:0 0 auto;white-space:nowrap}
+.entry-meta{font-size:15.5px;line-height:1.55;color:#6b7280;margin-top:1px}
+
+/* Tag buttons (DOI) */
+.tag-btn{padding:3px 8px;font-size:12.5px;font-weight:600;color:#6ba3d6;border:1px solid #444;border-radius:5px;text-decoration:none;display:inline-block}
+.tag-btn:hover{background:#333;text-decoration:none}
+
+/* DOI inline link */
+.doi-link{color:#6ba3d6;text-decoration:underline;font-style:normal}
+.doi-link:hover{color:#93c5fd}
+
+/* Research interest pills */
+.pill{display:inline-block;padding:5px 14px;font-size:14px;color:#9ca3af;border:1px solid #444;border-radius:20px;margin:0 6px 8px 0}
+
+/* Affiliations strip */
+.affil-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:12px}
+.affil{display:flex;flex-direction:column;align-items:center;text-align:center;padding:12px 8px 10px;background:#222;border:1px solid #333;border-radius:10px;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s}
+.affil:hover{border-color:#5a8fc2;transform:translateY(-2px);color:inherit;text-decoration:none}
+a.affil:hover .affil-name{color:#93c5fd}
+a.affil:focus-visible{outline:2px solid #5a8fc2;outline-offset:2px}
+.affil-logo{width:100%;height:52px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:7px;margin-bottom:9px;overflow:hidden}
+.affil-logo img{max-width:88%;max-height:40px;width:auto;height:auto;object-fit:contain}
+.affil-mono{display:none;align-items:center;justify-content:center;width:100%;height:100%;font-family:'Source Serif 4',serif;font-size:17px;font-weight:600;letter-spacing:0.02em;color:#2d4f70}
+.affil-name{font-size:12.5px;line-height:1.35;color:#cbd5e1;font-weight:600}
+.affil-year{margin-top:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6b7280}
+
+/* Project cards */
+.project-card{display:block;width:100%;text-align:left;background:#222;border:1px solid #333;border-radius:12px;overflow:hidden;color:inherit;font:inherit;padding:0;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s}
+.project-card:hover{border-color:#5a8fc2;box-shadow:0 6px 20px rgba(0,0,0,0.35);transform:translateY(-2px)}
+.project-card:focus-visible{outline:2px solid #5a8fc2;outline-offset:2px}
+.project-tag{font-size:11.5px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9ca3af;background:#2a2a2a;padding:3px 8px;border-radius:4px}
+.project-meta{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6b7280}
+.card-hint{display:flex;align-items:center;gap:5px;margin-top:10px;font-size:13px;font-weight:600;color:#5a8fc2}
+
+/* Media */
+.img-placeholder{aspect-ratio:16/9;background:repeating-linear-gradient(135deg,#2a2a2a 0 10px,#222 10px 20px);display:flex;align-items:center;justify-content:center}
+.img-placeholder span{font-family:"IBM Plex Mono",monospace;font-size:12px;color:#555}
+.project-img{aspect-ratio:16/9;object-fit:contain;width:100%;background:#fff;padding:10px}
+
+/* ===== Modal ===== */
+.modal{position:fixed;inset:0;z-index:200;display:none}
+.modal[data-open="true"]{display:block}
+.modal-backdrop{position:absolute;inset:0;background:rgba(10,10,10,0.82);backdrop-filter:blur(4px)}
+.modal-close{position:absolute;top:0;right:0;width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:#2a2a2a;border:1px solid #444;border-radius:8px;color:#e2e8f0;cursor:pointer;font-size:20px;line-height:1}
+.modal-close:hover{background:#5a8fc2;border-color:#5a8fc2;color:#fff}
+.project-modal-panel{position:relative;width:min(682px,calc(100% - 32px));max-height:88vh;margin:6vh auto 0;background:#1e1e1e;border:1px solid #3a3a3a;border-radius:14px;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,0.6)}
+.project-modal-panel .modal-close{position:sticky;float:right;top:12px;right:12px;margin:12px 12px 0 0;z-index:2}
+.pm-body{padding:0 0 28px}
+.pm-hero{width:100%;height:230px;object-fit:contain;background:#fff;border-radius:14px 14px 0 0;padding:12px}
+.pm-inner{padding:22px 28px 0}
+.pm-title{margin:0 0 10px;font-family:'Source Serif 4',serif;font-size:25px;font-weight:600;line-height:1.28;color:#e2e8f0}
+.pm-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.pm-meta{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid #333}
+.pm-section-title{margin:22px 0 8px;font-size:13px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#5a8fc2}
+.pm-body p{margin:0 0 12px;font-size:16px;line-height:1.65;color:#cbd5e1}
+.pm-body ul{margin:0 0 12px;padding-left:20px;font-size:16px;line-height:1.7;color:#cbd5e1}
+.pm-body li{margin-bottom:6px}
+.pm-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+
+/* Gallery cards */
+.gallery-card{margin:0;background:#222;border:1px solid #333;border-radius:12px;overflow:hidden;cursor:pointer;display:block;width:100%;padding:0;text-align:left;color:inherit;font:inherit;transition:border-color .15s,transform .15s}
+.gallery-card:hover{border-color:#5a8fc2;transform:translateY(-2px)}
+.gallery-card:focus-visible{outline:2px solid #5a8fc2;outline-offset:2px}
+.gallery-thumb{position:relative}
+.gallery-img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.gallery-count{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,0.72);color:#e2e8f0;font-family:'IBM Plex Mono',monospace;font-size:12px;padding:3px 9px;border-radius:20px;display:flex;align-items:center;gap:5px}
+
+/* Lightbox */
+.lightbox-stage{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 16px 20px}
+.lightbox-img{max-width:min(1100px,calc(100vw - 120px));max-height:calc(100vh - 170px);width:auto;object-fit:contain;border-radius:8px;box-shadow:0 20px 50px rgba(0,0,0,0.6)}
+.lightbox-caption{margin-top:14px;text-align:center;max-width:70ch}
+.lightbox-caption .lb-title{font-size:16.5px;color:#e2e8f0}
+.lightbox-caption .lb-count{margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8a8a8a}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;display:flex;align-items:center;justify-content:center;background:rgba(34,34,34,0.9);border:1px solid #444;border-radius:999px;color:#e2e8f0;cursor:pointer;font-size:22px;line-height:1}
+.lb-nav:hover{background:#5a8fc2;border-color:#5a8fc2;color:#fff}
+.lb-prev{left:18px}
+.lb-next{right:18px}
+.lightbox-stage .modal-close{top:16px;right:18px}
+
+/* Section dividers */
+.section-divider{border-top:1px solid #333;margin-top:44px;padding-top:44px}
+
+/* Responsive */
+@media(max-width:768px){
+  .nav-toggle{display:flex}
+  .nav-menu{
+    display:none;
+    position:absolute;top:100%;right:16px;
+    flex-direction:column;align-items:stretch;
+    min-width:190px;padding:8px;
+    background:#1f1f1f;border:1px solid #3a3a3a;border-radius:10px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.5);
+  }
+  .nav-menu[data-open="true"]{display:flex}
+  .nav-menu .nav-link{padding:11px 12px;font-size:16px;border-radius:6px}
+  .hero-inner{padding:40px 24px!important}
+  .about-grid{grid-template-columns:1fr!important}
+  .stat-row{flex-wrap:wrap}
+  .project-modal-panel{margin-top:3vh;max-height:94vh}
+  .pm-inner{padding:20px 20px 0}
+  .lb-prev{left:6px}
+  .lb-next{right:6px}
+  .lightbox-img{max-width:calc(100vw - 32px)}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header style="position:sticky;top:0;z-index:50;background:rgba(24,24,24,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #333">
+  <nav style="position:relative;max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px">
+    <a href="#top" style="font-family:'Source Serif 4',serif;font-size:19px;font-weight:600;color:#e2e8f0;letter-spacing:-0.01em;text-decoration:none">Nisumba Soodhani</a>
+    <div style="flex:1 1 20px"></div>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu" id="nav-menu">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#research" class="nav-link">Research</a>
+      <a href="#activities" class="nav-link">Research Commitments</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" style="text-align:center;padding:56px 24px 24px">
+  <div class="hero-inner" style="max-width:700px;margin:0 auto">
+    <img src="NS--coverphoto.jpg" alt="Nisumba Soodhani K" style="width:180px;height:180px;border-radius:999px;border:3px solid #333;margin:0 auto 24px;object-fit:cover">
+    <h1 style="margin:0 0 8px;font-family:'Source Serif 4',serif;font-size:38px;font-weight:600;letter-spacing:-0.02em;color:#e2e8f0">Nisumba Soodhani K</h1>
+    <p style="margin:0 0 4px;font-size:17px;color:#9ca3af">Ph.D. Candidate</p>
+    <p style="margin:0 0 4px;font-size:17px;color:#9ca3af">Centre for Educational Technology, IIT Bombay</p>
+    <p style="margin:0 0 20px;font-size:15px;color:#6b7280">Mumbai, India, 400076</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px">
+      <a href="mailto:nisumba_soodhani@iitb.ac.in" class="hero-btn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>Email</a>
+      <a href="https://scholar.google.com/citations?user=GRoQLHwAAAAJ&hl=en" class="hero-btn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="margin-right:4px"><path d="M12 3L1 9l4 2.2v6L12 21l7-3.8v-6L23 9l-11-6zm0 14.5L6.5 14v-3.5L12 14l5.5-3.5V14L12 17.5z"/></svg>Google Scholar</a>
+      <a href="https://orcid.org/0009-0003-6375-5582" class="hero-btn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="margin-right:4px"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.5 5.5a1 1 0 110 2 1 1 0 010-2zM6.8 8.8h1.4v9.4H6.8V8.8zm3.8 0h3.8c3.3 0 5.1 2.2 5.1 4.7s-1.8 4.7-5.1 4.7h-3.8V8.8zm1.4 1.3v7.1h2.3c2.6 0 3.8-1.7 3.8-3.5s-1.2-3.6-3.8-3.6H12z"/></svg>ORCID</a>
+      <a href="https://www.linkedin.com/in/nisumba-soodhani/" class="hero-btn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="margin-right:4px"><path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V9h3v10zM6.5 7.7A1.8 1.8 0 016.5 4a1.8 1.8 0 010 3.7zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V9h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg>LinkedIn</a>
+      <a href="https://www.researchgate.net/profile/Nisumba-Soodhani-Kamaraj" class="hero-btn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" style="margin-right:4px"><rect width="24" height="24" rx="4" fill="currentColor"/><text x="12" y="16" text-anchor="middle" font-size="12" font-weight="700" font-family="system-ui,sans-serif" fill="#222">RG</text></svg>ResearchGate</a>
+    </div>
+  </div>
+</section>
+
+<main style="max-width:1120px;margin:0 auto;padding:0 24px 96px">
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section-divider">
+    <div class="about-grid" style="display:grid;grid-template-columns:1fr 440px;gap:40px;align-items:stretch">
+
+      <!-- LEFT: Heading + Bio + Research Interests + Affiliations -->
+      <div>
+        <h2 class="section-title">About</h2>
+
+        <p style="margin:0 0 14px;font-size:17px;line-height:1.65;color:#cbd5e1">I study motivation, persistence, and collaborative learning in makerspaces and technology-enhanced learning environments. I use interaction analysis and mixed-method approaches to examine how learners navigate challenges during collaborative STEM activities. My broader interests include learning analytics and AI in education, with the aim of contributing to the design of learning environments that support meaningful learning.</p>
+        <p style="margin:0 0 14px;font-size:17px;line-height:1.65;color:#cbd5e1">My doctoral thesis, <em>Characterizing Persistence as a Process in Collaborative Electronic Making: An Interactional Account</em>, has been submitted. Supervised by Prof. Ramkumar Rajendran and co-supervised by Prof. Sridhar Iyer, it uses process analysis and qualitative methods to understand the interactional processes through which teams sustain productive persistence during extended making activities.</p>
+        <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#9ca3af">My full curriculum vitae, with the complete list of publications, awards, and projects, is available as a <a href="Nisumba_CV.pdf" style="font-weight:600">PDF download</a>.</p>
+
+        <p class="sub-head">Research Interests</p>
+        <div style="margin-bottom:28px">
+          <span class="pill">Learning Sciences</span>
+          <span class="pill">Motivation and Persistence</span>
+          <span class="pill">Collaborative Learning</span>
+          <span class="pill">Learning Analytics</span>
+          <span class="pill">AI in Education</span>
+          <span class="pill">Maker Education</span>
+          <span class="pill">Interaction Analysis</span>
+        </div>
+
+        <p class="sub-head">Affiliations</p>
+        <div class="affil-grid">
+          <a class="affil" href="https://sites.google.com/view/learning-analytics-iitb" target="_blank" rel="noopener">
+            <div class="affil-logo"><img src="Logos/LA.png" alt="Learning Analytics Lab logo"><span class="affil-mono">LA Lab</span></div>
+            <div class="affil-name">Learning Analytics Lab</div>
+            <div class="affil-year">2023 – present</div>
+          </a>
+          <div class="affil">
+            <div class="affil-logo"><img src="Logos/iitb.png" alt="IIT Bombay logo"><span class="affil-mono">IITB</span></div>
+            <div class="affil-name">IIT Bombay</div>
+            <div class="affil-year">2021 – present</div>
+          </div>
+          <div class="affil">
+            <div class="affil-logo"><img src="Logos/NITT.jpeg" alt="NIT Tiruchirappalli logo"><span class="affil-mono">NITT</span></div>
+            <div class="affil-name">NIT Tiruchirappalli</div>
+            <div class="affil-year">2020 – 2021</div>
+          </div>
+          <div class="affil">
+            <div class="affil-logo"><img src="Logos/Annauni.png" alt="College of Engineering Guindy logo"><span class="affil-mono">CEG</span></div>
+            <div class="affil-name">CEG, Anna University</div>
+            <div class="affil-year">2017 – 2019</div>
+          </div>
+          <div class="affil">
+            <div class="affil-logo"><img src="Logos/Sastra.png" alt="SASTRA University logo"><span class="affil-mono">SASTRA</span></div>
+            <div class="affil-name">SASTRA University</div>
+            <div class="affil-year">2013 – 2017</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact + Education + Appointments + Methods -->
+      <div style="display:flex;flex-direction:column;justify-content:space-between;gap:16px">
+        <div class="card">
+          <p class="sub-head" style="margin-bottom:12px">Experience</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div>
+              <div class="entry-row">
+                <div class="entry-name">Research Scholar</div>
+                <span class="entry-year">2023 – present</span>
+              </div>
+              <div class="entry-meta">Learning Analytics Lab, IIT Bombay</div>
+            </div>
+            <div>
+              <div class="entry-row">
+                <div class="entry-name">Junior Research Fellow</div>
+                <span class="entry-year">2020 – 2021</span>
+              </div>
+              <div class="entry-meta">NIT Tiruchirappalli</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="sub-head" style="margin-bottom:12px">Education</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div>
+              <div class="entry-row">
+                <div class="entry-name">Ph.D. in Educational Technology</div>
+                <span class="entry-year">Thesis submission · Nov 2026</span>
+              </div>
+              <div class="entry-meta">IIT Bombay · CPI 9.79/10</div>
+            </div>
+            <div>
+              <div class="entry-row">
+                <div class="entry-name">M.E. in Power Electronics</div>
+                <span class="entry-year">2019</span>
+              </div>
+              <div class="entry-meta">CEG, Anna University · CPI 8.10/10</div>
+            </div>
+            <div>
+              <div class="entry-row">
+                <div class="entry-name">B.Tech in Electrical and Electronics Engineering</div>
+                <span class="entry-year">2017</span>
+              </div>
+              <div class="entry-meta">SASTRA University · CPI 7.82/10</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="sub-head" style="margin-bottom:14px">Research Methods and Skills</p>
+          <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#e2e8f0">Research Methods</p>
+          <div style="margin:0 0 14px">
+            <span class="pill">Interaction analysis</span>
+            <span class="pill">Qualitative coding</span>
+            <span class="pill">Interview analysis</span>
+            <span class="pill">Affective computing</span>
+            <span class="pill">Process analysis</span>
+            <span class="pill">Epistemic network analysis (ENA)</span>
+          </div>
+          <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#e2e8f0">Programming</p>
+          <div style="margin:0 0 14px">
+            <span class="pill">Python</span>
+            <span class="pill">C</span>
+            <span class="pill">C++</span>
+            <span class="pill">MATLAB</span>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+          </div>
+          <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#e2e8f0">Tools</p>
+          <div>
+            <span class="pill">ELAN</span>
+            <span class="pill">Figma</span>
+            <span class="pill">Tableau</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section-divider">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub" style="max-width:none">Research projects and collaborative initiatives I have led or contributed to. Select a project to read more.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px">
+
+      <button type="button" class="project-card" data-project="doctoral">
+        <img src="Project_files/Persistence%20in%20Collaborative%20Making.png" alt="Persistence in Collaborative Making" class="project-img">
+        <div style="padding:18px 20px 20px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+            <span class="project-tag">Ongoing</span>
+            <span class="project-tag">Doctoral Research</span>
+          </div>
+          <h3 style="margin:0 0 6px;font-size:19px;font-weight:600;line-height:1.3;color:#e2e8f0">Persistence in Collaborative Making</h3>
+          <p style="margin:0 0 12px;font-size:15.5px;line-height:1.55;color:#9ca3af">Investigating motivation and persistence in collaborative electronic making through video-based interaction analysis of how learners navigate challenges during STEM design activities.</p>
+          <div class="project-meta">2022 – present · IIT Bombay</div>
+          <div class="card-hint">Read more <span aria-hidden="true">→</span></div>
+        </div>
+      </button>
+
+      <button type="button" class="project-card" data-project="pijam">
+        <img src="Project_files/Pi%20Jam.png" alt="Pi Jam and Maker Factory" class="project-img">
+        <div style="padding:18px 20px 20px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+            <span class="project-tag">Completed</span>
+            <span class="project-tag">Ethnography</span>
+          </div>
+          <h3 style="margin:0 0 6px;font-size:19px;font-weight:600;line-height:1.3;color:#e2e8f0">Pi Jam and Maker Factory Ethnography</h3>
+          <p style="margin:0 0 12px;font-size:15.5px;line-height:1.55;color:#9ca3af">Three-month fieldwork across BMC government schools in Mumbai, studying how low-cost makerspace programmes (Pi Jam and Maker Factory) are implemented for middle school learners.</p>
+          <div class="project-meta">2023 – 2024 · IIT Bombay</div>
+          <div class="card-hint">Read more <span aria-hidden="true">→</span></div>
+        </div>
+      </button>
+
+      <button type="button" class="project-card" data-project="cale">
+        <img src="Project_files/CALE%20framework.png" alt="CALE framework" class="project-img">
+        <div style="padding:18px 20px 20px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+            <span class="project-tag">Completed</span>
+            <span class="project-tag">International</span>
+          </div>
+          <h3 style="margin:0 0 6px;font-size:19px;font-weight:600;line-height:1.3;color:#e2e8f0">Critical Action Learning Exchange (CALE)</h3>
+          <p style="margin:0 0 12px;font-size:15.5px;line-height:1.55;color:#9ca3af">International research initiative engaging teachers across different countries in designing culturally responsive, action-oriented lessons on social and environmental challenges.</p>
+          <div class="project-meta">2022 – 2023 · IIT Bombay &amp; University of Toronto</div>
+          <div class="card-hint">Read more <span aria-hidden="true">→</span></div>
+        </div>
+      </button>
+
+      <button type="button" class="project-card" data-project="pwd">
+        <img src="Project_files/ISD%20PwD.png" alt="PwD Awareness Website" class="project-img">
+        <div style="padding:18px 20px 20px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+            <span class="project-tag">Completed</span>
+            <span class="project-tag">Accessibility</span>
+          </div>
+          <h3 style="margin:0 0 6px;font-size:19px;font-weight:600;line-height:1.3;color:#e2e8f0">PwD Website — Instructional System Design</h3>
+          <p style="margin:0 0 12px;font-size:15.5px;line-height:1.55;color:#9ca3af">Developed a website and instructional content to raise awareness among higher education functionaries about the needs of persons with disabilities.</p>
+          <div class="project-meta">2023 · IIT Bombay</div>
+          <div class="card-hint">Read more <span aria-hidden="true">→</span></div>
+        </div>
+      </button>
+
+      <button type="button" class="project-card" data-project="dhh">
+        <img src="Project_files/DHH.jpg" alt="Online Inclusive Library for Deaf and Hard of Hearing" class="project-img">
+        <div style="padding:18px 20px 20px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+            <span class="project-tag">Completed</span>
+            <span class="project-tag">Inclusive Design</span>
+          </div>
+          <h3 style="margin:0 0 6px;font-size:19px;font-weight:600;line-height:1.3;color:#e2e8f0">Online Inclusive Library for Deaf and Hard of Hearing</h3>
+          <p style="margin:0 0 12px;font-size:15.5px;line-height:1.55;color:#9ca3af">Figma prototype of an online digital library for Deaf and Hard of Hearing learners, with a picture book and home sign videos as core components for scientific concepts.</p>
+          <div class="project-meta">2021 · IIT Bombay</div>
+          <div class="card-hint">Read more <span aria-hidden="true">→</span></div>
+        </div>
+      </button>
+
+<!-- MEMS project card (commented out - uncomment to restore)
+      <button type="button" class="project-card" data-project="mems">
+        <div class="img-placeholder"><span>Wireless sensor node image 1200×675</span></div>
+        <div style="padding:18px 20px 20px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+            <span class="project-tag">Completed</span>
+            <span class="project-tag">Embedded Systems</span>
+          </div>
+          <h3 style="margin:0 0 6px;font-size:19px;font-weight:600;line-height:1.3;color:#e2e8f0">MEMS — Wireless Sensor Node for Electrical Machines and Drives</h3>
+          <p style="margin:0 0 12px;font-size:15.5px;line-height:1.55;color:#9ca3af">Developing sensors that transfer the torque and speed parameters of an electric drive to a real-time system webpage.</p>
+          <div class="project-meta">2020 – 2021 · NIT Tiruchirappalli</div>
+          <div class="card-hint">Read more <span aria-hidden="true">→</span></div>
+        </div>
+      </button>
+-->
+
+<!-- SynRM project card (commented out - uncomment to restore)
+      <button type="button" class="project-card" data-project="motor">
+        <div class="img-placeholder"><span>SynRM motor image 1200×675</span></div>
+        <div style="padding:18px 20px 20px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+            <span class="project-tag">Completed</span>
+            <span class="project-tag">ME Thesis</span>
+          </div>
+          <h3 style="margin:0 0 6px;font-size:19px;font-weight:600;line-height:1.3;color:#e2e8f0">External Rotor Synchronous Reluctance Motor for an Electric-Assisted Bike</h3>
+          <p style="margin:0 0 12px;font-size:15.5px;line-height:1.55;color:#9ca3af">Designing, simulating and prototyping a 250 W, 48 V outer-rotor synchronous reluctance motor for direct-drive e-bike use.</p>
+          <div class="project-meta">2018 – 2019 · College of Engineering Guindy</div>
+          <div class="card-hint">Read more <span aria-hidden="true">→</span></div>
+        </div>
+      </button>
+-->
+
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section id="research" class="section-divider">
+    <h2 class="section-title">Research</h2>
+    <p class="section-sub" style="max-width:none">Journal articles, conference papers, and manuscripts under review.</p>
+
+    <h3 class="sub-head">Journal Articles</h3>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:36px">
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Enhancing data analysis and programming skills through structured prompt training: The impact of generative AI in engineering education</h4>
+          <span style="display:flex;align-items:center;gap:8px;flex-shrink:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280">2025</span> <a href="bib/garg2025genai.bib" download class="tag-btn">BibTeX</a></span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af">Garg, A., <strong style="color:#cbd5e1">Soodhani, N.</strong>, &amp; Rajendran, R.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">Computers and Education: Artificial Intelligence, 8, 100380, <a href="https://doi.org/10.1016/j.caeai.2025.100380" class="doi-link">https://doi.org/10.1016/j.caeai.2025.100380</a></p>
+      </article>
+    </div>
+
+    <h3 class="sub-head">Under Review</h3>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:36px">
+      <article class="paper-card">
+        <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0">Imitation, modification, or innovation? How task design shapes collaborative epistemic practices in maker education</h4>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af"><strong style="color:#cbd5e1">Soodhani, N.</strong>, Rajendran, R., &amp; Iyer, S.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">Under review at International Journal of Computer Supported Collaborative Learning</p>
+      </article>
+    </div>
+
+    <h3 class="sub-head">Conference Papers</h3>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:36px">
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Fostering educational intimacy: ILSSA intergenerational partnerships for purposeful community building</h4>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280;flex-shrink:0">2026</span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af">Malcolm, B., Vickery, M., Louis-Strakes Lopez, J., … <strong style="color:#cbd5e1">Soodhani, N.</strong>, … &amp; Bae, Y.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">Proceedings of the 20th International Conference of the Learning Sciences — ICLS 2026</p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Learning sciences in the Global South: Dialogue for multiple ways of knowing and doing</h4>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280;flex-shrink:0">2026</span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af">Murthy, S., Karnam, D., Velayudhan, A., … <strong style="color:#cbd5e1">Soodhani, N.</strong>, … &amp; Dasgupta, C.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">Proceedings of the 20th International Conference of the Learning Sciences — ICLS 2026</p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Characterising persistence in collaborative electronic making</h4>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280;flex-shrink:0">2026</span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af"><strong style="color:#cbd5e1">Soodhani, N.</strong>, Rai, A., Rajendran, R., &amp; Iyer, S.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">International Conference on Computers in Education (ICCE 2026) [Selected]</p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">From information foraging to making sense of the information: Decoding mindset-driven learning in computer based learning environments</h4>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280;flex-shrink:0">2026</span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af">Nishane, I., Badhe, V., Shaha, J., <strong style="color:#cbd5e1">Soodhani, N.</strong>, Rajmane, A., Rajendran, R., &amp; Iyer, S.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">27th International Conference on AI in Education (AIED 2026)</p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Persistence in electronic-making projects: A socio-cognitive perspective</h4>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280;flex-shrink:0">2025</span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af"><strong style="color:#cbd5e1">Soodhani, N.</strong>, Rajendran, R., &amp; Iyer, S.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">International Conference on Computers in Education (ICCE 2025)</p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Understanding persistence in makerspaces: A socio-cognitive perspective on trouble and repair processes</h4>
+          <span style="display:flex;align-items:center;gap:8px;flex-shrink:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280">2025</span> <a href="bib/soodhani2025persistence.bib" download class="tag-btn">BibTeX</a></span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af"><strong style="color:#cbd5e1">Soodhani, N.</strong>, Rajendran, R., &amp; Iyer, S.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">Proceedings of the 19th International Conference of the Learning Sciences — ICLS 2025, pp. 3144–3146, <a href="https://doi.org/10.22318/icls2025.652237" class="doi-link">https://doi.org/10.22318/icls2025.652237</a></p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Assessing the dynamics of middle school judgment of learning (JOL) in mathematics: A study in Kenya</h4>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280;flex-shrink:0">2024</span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af"><strong style="color:#cbd5e1">Soodhani, N.</strong>, Prakash, A., Singh, D., Pathan, R., Mishra, A., Shelar, S., Sharma, A., &amp; Rajendran, R.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">International Association for Development of the Information Society (IADIS 2024)</p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Unraveling learner self-efficacy in the electronic making: Insights from interaction analysis, self-reports and interview</h4>
+          <span style="display:flex;align-items:center;gap:8px;flex-shrink:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280">2024</span> <a href="bib/soodhani2024selfefficacy.bib" download class="tag-btn">BibTeX</a></span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af"><strong style="color:#cbd5e1">Soodhani, N.</strong>, Alekh, V., Saxena, A., &amp; Rajendran, R.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">Proceedings of the 18th International Conference of the Learning Sciences — ICLS 2024, pp. 1454–1457, <a href="https://doi.org/10.22318/icls2024.681581" class="doi-link">https://doi.org/10.22318/icls2024.681581</a></p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Analyzing team cognition and combined efficacy in makerspaces using multimodal data</h4>
+          <span style="display:flex;align-items:center;gap:8px;flex-shrink:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280">2023</span> <a href="bib/soodhani2023teamcognition.bib" download class="tag-btn">BibTeX</a></span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af"><strong style="color:#cbd5e1">Soodhani, N.</strong></p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">Proceedings of the 16th International Conference on Educational Data Mining (EDM 2023), pp. 539–542, <a href="https://doi.org/10.5281/zenodo.8115683" class="doi-link">https://doi.org/10.5281/zenodo.8115683</a></p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Exploring teacher beliefs around critical action curriculum: Outcomes from a learning exchange</h4>
+          <span style="display:flex;align-items:center;gap:8px;flex-shrink:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280">2023</span> <a href="bib/soodhani2023teacherbeliefs.bib" download class="tag-btn">BibTeX</a></span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af"><strong style="color:#cbd5e1">Soodhani, N.</strong>, Raman, P., Carvalho, R., Vinay, K., Dasgupta, C., &amp; Slotta, J. D.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">Proceedings of the 17th International Conference of the Learning Sciences — ICLS 2023, pp. 2165–2166, <a href="https://doi.org/10.22318/icls2023.781947" class="doi-link">https://doi.org/10.22318/icls2023.781947</a></p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Teacher professional development in critical action pedagogy: A culturally responsive approach</h4>
+          <span style="display:flex;align-items:center;gap:8px;flex-shrink:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280">2023</span> <a href="bib/carvalho2023teacherpd.bib" download class="tag-btn">BibTeX</a></span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af">Carvalho, R., Ghasempour, E., Khan, R., Slotta, J. D., Raman, P., Zhang, X., … Dasgupta, C., &amp; <strong style="color:#cbd5e1">Soodhani, N.</strong></p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">Proceedings of the 17th International Conference of the Learning Sciences — ICLS 2023, pp. 760–767, <a href="https://doi.org/10.22318/icls2023.795166" class="doi-link">https://doi.org/10.22318/icls2023.795166</a></p>
+      </article>
+
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Online library for Deaf and Hard of Hearing students</h4>
+          <span style="display:flex;align-items:center;gap:8px;flex-shrink:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280">2022</span> <a href="bib/soodhani2022dhhlibrary.bib" download class="tag-btn">BibTeX</a></span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af"><strong style="color:#cbd5e1">Soodhani, N.</strong>, Pawar, M., Kolap, J., Priyadarshini, R., &amp; Dasgupta, C.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">2022 International Conference on Advanced Learning Technologies (ICALT), Bucharest, Romania, pp. 284–286, <a href="https://doi.org/10.1109/ICALT55010.2022.00091" class="doi-link">https://doi.org/10.1109/ICALT55010.2022.00091</a></p>
+      </article>
+
+    </div>
+
+    <h3 class="sub-head">Poster Presentations</h3>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:36px">
+      <article class="paper-card">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between">
+          <h4 style="margin:0;font-size:18.5px;font-weight:600;line-height:1.35;color:#e2e8f0;flex:1 1 280px">Exploring academic makerspace program for middle school learners in Indian government schools</h4>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7280;flex-shrink:0">2024</span>
+        </div>
+        <p style="margin:6px 0 0;font-size:15.5px;color:#9ca3af"><strong style="color:#cbd5e1">Soodhani, N.</strong>, &amp; Rajendran, R.</p>
+        <p style="margin:2px 0 0;font-size:15.5px;font-style:italic;color:#6b7280">8th International Symposium on Academic Makerspaces (ISAM 2024), Sheffield, UK</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ ACTIVITIES ============ -->
+  <section id="activities" class="section-divider">
+    <h2 class="section-title">Research Commitments</h2>
+    <p class="section-sub" style="max-width:none">Mentorship, teaching, awards, invited talks, outreach, and academic service.</p>
+
+    <h3 class="sub-head">Mentorship</h3>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+      <div class="paper-card">
+        <div class="entry-row">
+          <div class="entry-name" style="font-size:16.5px">Ms. Disha Naurange</div>
+          <span class="entry-year">Intern &middot; 2026</span>
+        </div>
+        <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:4px">Qualitative research methods focusing on verbal and embodied interaction. IISER Pune.</div>
+      </div>
+      <div class="paper-card">
+        <div class="entry-row">
+          <div class="entry-name" style="font-size:16.5px">Ms. Oviya</div>
+          <span class="entry-year">B.Tech &middot; 2026</span>
+        </div>
+        <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:4px">Affective computing in collaborative learning settings, for supervised research exposition. IIT Bombay.</div>
+      </div>
+      <div class="paper-card">
+        <div class="entry-row">
+          <div class="entry-name" style="font-size:16.5px">Ms. Priya</div>
+          <span class="entry-year">Research Buddy &middot; 2025</span>
+        </div>
+        <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:4px">Academic paper writing, as part of PRISm (Practitioner Research Idea Summit), T4E 2025.</div>
+      </div>
+      <div class="paper-card">
+        <div class="entry-row">
+          <div class="entry-name" style="font-size:16.5px">Mr. Ganesh Lokhande</div>
+          <span class="entry-year">Research Buddy &middot; 2023</span>
+        </div>
+        <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:4px">Workshop on Documenting Educational Technology Research.</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <h3 class="sub-head">Teaching Experience</h3>
+      <p style="margin:0 0 12px;font-size:15.5px;color:#6b7280">Teaching assistant for:</p>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">Designing AI-driven Personalised and Adaptive Learning Environments</div>
+            <span class="entry-year">2026</span>
+          </div>
+          <div class="entry-meta">NPTEL &middot; IIT Bombay</div>
+          <ul style="margin:6px 0 0;padding-left:18px;font-size:15.5px;line-height:1.6;color:#cbd5e1">
+            <li>Contributed to content development, instructional design, and course planning.</li>
+            <li>Designed assignments and learning activities related to AI-supported personalised learning.</li>
+            <li>Recorded demonstration lectures and supported course delivery.</li>
+          </ul>
+          <div class="pm-links" style="margin-top:8px">
+            <a href="https://www.youtube.com/watch?v=QLB5YhGaRPY" class="tag-btn" target="_blank" rel="noopener">Course trailer</a>
+            <a href="https://www.youtube.com/watch?v=6Vn2-kvoem0&amp;list=PLOzRYVm0a65fYSJmcTE3Mu1vCrfQTqWyd&amp;index=1" class="tag-btn" target="_blank" rel="noopener">Lecture 1</a>
+            <a href="https://www.youtube.com/watch?v=LeVuswABEEE&amp;list=PLOzRYVm0a65fYSJmcTE3Mu1vCrfQTqWyd&amp;index=24" class="tag-btn" target="_blank" rel="noopener">Lecture 24</a>
+            <a href="https://www.youtube.com/watch?v=kbWBL0HN_nU&amp;list=PLOzRYVm0a65fYSJmcTE3Mu1vCrfQTqWyd&amp;index=50" class="tag-btn" target="_blank" rel="noopener">Lecture 50</a>
+          </div>
+        </div>
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">Learning Analytics and Tools</div>
+            <span class="entry-year">2023</span>
+          </div>
+          <div class="entry-meta">NPTEL &middot; IIT Bombay</div>
+          <ul style="margin:6px 0 0;padding-left:18px;font-size:15.5px;line-height:1.6;color:#cbd5e1">
+            <li>Designed assignments and practical activities related to learning analytics.</li>
+            <li>Mentored learners and facilitated discussion forums.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">Learning Analytics and Tools</div>
+            <span class="entry-year">2023</span>
+          </div>
+          <div class="entry-meta">Graduate course &middot; IIT Bombay</div>
+          <ul style="margin:6px 0 0;padding-left:18px;font-size:15.5px;line-height:1.6;color:#cbd5e1">
+            <li>Supported course delivery, student projects, assignments, and classroom discussions.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">Human Computer Interaction</div>
+            <span class="entry-year">2022</span>
+          </div>
+          <div class="entry-meta">Graduate course &middot; IIT Bombay</div>
+          <ul style="margin:6px 0 0;padding-left:18px;font-size:15.5px;line-height:1.6;color:#cbd5e1">
+            <li>Supported course delivery, student projects, assignments, and classroom discussions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <h3 class="sub-head">Awards and Fellowships</h3>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">ISLS Doctoral Consortium Award</div>
+            <span class="entry-year">2024</span>
+          </div>
+          <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:2px">Awarded $2,000 by the International Society of the Learning Sciences for participation in the 2024 ISLS Doctoral Consortium.</div>
+        </div>
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">ISAM Travel Scholarship</div>
+            <span class="entry-year">2024</span>
+          </div>
+          <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:2px">Awarded $500 by the International Symposium on Academic Makerspaces to attend the conference in Sheffield, UK.</div>
+        </div>
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">Prof. Ram Kumar Scholarship</div>
+            <span class="entry-year">2023</span>
+          </div>
+          <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:2px">Awarded $500 at EDM 2023 by the Prof. Ram Kumar Memorial Foundation.</div>
+        </div>
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">EDM Travel Scholarship</div>
+            <span class="entry-year">2023</span>
+          </div>
+          <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:2px">Awarded $1,250 by the International Educational Data Mining Society.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:16px">
+      <div class="card">
+        <h3 class="sub-head">Invited Talks</h3>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div>
+            <div class="entry-row">
+              <div class="entry-name" style="font-size:16.5px">Makerspaces as Learning Environments</div>
+              <span class="entry-year">2026</span>
+            </div>
+            <div class="entry-meta">Pedagogy and design possibilities for education &middot; MA Educational Technology, TISS</div>
+          </div>
+          <div>
+            <div class="entry-row">
+              <div class="entry-name" style="font-size:16.5px">TLC Talk Series</div>
+              <span class="entry-year">2025</span>
+            </div>
+            <div class="entry-meta">A glimpse into research at the Centre for Educational Technology, IIT Bombay</div>
+            <div class="pm-links" style="margin-top:6px">
+              <a href="https://www.youtube.com/watch?v=hyAxyNkZY2o&amp;list=PLIrt4-W3hbe7VgVJZKYUOQdrOJpaD8xnW&amp;index=7" class="tag-btn" target="_blank" rel="noopener">Recording</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="sub-head">Professional Service</h3>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div>
+            <div style="font-size:16px;font-weight:600;color:#e2e8f0">Programme Committee member</div>
+            <div class="entry-meta">ISLS 2024, ISLS 2025, T4E 2025</div>
+          </div>
+          <div>
+            <div style="font-size:16px;font-weight:600;color:#e2e8f0">Sub-reviewer</div>
+            <div class="entry-meta">AIED 2023, ICCE 2023, T4E 2023</div>
+          </div>
+          <div>
+            <div style="font-size:16px;font-weight:600;color:#e2e8f0">Volunteer</div>
+            <div class="entry-meta">ISLS 2025, ICCE 2025, T4E 2023, T4E 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <h3 class="sub-head">Outreach &mdash; Workshops for School Students</h3>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">Summer Electronics Workshop, St. Mary&rsquo;s Malankara High School, Mumbai</div>
+            <span class="entry-year">2024</span>
+          </div>
+          <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:2px">Designed and conducted a one-month workshop introducing circuits, Arduino, Tinkercad, and block-based programming, with hands-on making using breadboards, LEDs, sensors and actuators.</div>
+        </div>
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px"><a href="https://wiseapp.in/2k24/" target="_blank" rel="noopener">WiSE &mdash; Women in Science and Engineering</a></div>
+            <span class="entry-year">2024</span>
+          </div>
+          <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:2px">Volunteered for hands-on electronics sessions &mdash; Light Bulb to Radio, Sense &amp; Act, and the WiSE Rover &mdash; for students from rural India.</div>
+        </div>
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">Electronic Making Workshop</div>
+            <span class="entry-year">2023</span>
+          </div>
+          <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:2px">Led a two-day workshop on electronic making using breadboards, paper circuits, and electronic textiles for middle school students.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="sub-head">Academic Leadership and Service</h3>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">General Secretary (GSec)</div>
+            <span class="entry-year">2023 &ndash; 2024</span>
+          </div>
+          <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:2px">Centre for Educational Technology, IIT Bombay. Department representative, coordinating academic and student activities and acting as liaison between students and faculty.</div>
+        </div>
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">Asia-Pacific Representative</div>
+            <span class="entry-year">2023 &ndash; 2024</span>
+          </div>
+          <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:2px">International Learning Sciences Student Association. Organised a webinar series focusing on researchers from the Asia-Pacific region.</div>
+        </div>
+        <div>
+          <div class="entry-row">
+            <div class="entry-name" style="font-size:16.5px">Department Coordinator, IRSCP</div>
+            <span class="entry-year">2022 &ndash; 2023</span>
+          </div>
+          <div style="font-size:15.5px;line-height:1.55;color:#9ca3af;margin-top:2px">Institute Research Scholar Companion Programme, IIT Bombay.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="gallery" class="section-divider">
+    <h2 class="section-title">Gallery</h2>
+    <p class="section-sub" style="max-width:none">Photographs from research studies and outreach workshops. Select an album to view all its photographs.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px">
+
+      <button type="button" class="gallery-card" data-album="pijam">
+        <div class="gallery-thumb">
+          <img src="Pi%20Jam/IMG_20231219_113205.jpg" alt="Pi Jam and Maker Factory" class="gallery-img">
+          <span class="gallery-count"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>6</span>
+        </div>
+        <figcaption style="padding:14px 16px 16px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#6b7280;margin-bottom:5px">Fieldwork</div>
+          <div style="font-size:16px;line-height:1.45;color:#e2e8f0">Pi Jam and Maker Factory, BMC Schools, Mumbai</div>
+        </figcaption>
+      </button>
+
+      <button type="button" class="gallery-card" data-album="summer">
+        <div class="gallery-thumb">
+          <img src="Summer%20Electronics%20Workshop/WhatsApp%20Image%202026-09-29%20at%2021.19.50%20%283%29.jpeg" alt="Summer Electronics Workshop" class="gallery-img">
+          <span class="gallery-count"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>6</span>
+        </div>
+        <figcaption style="padding:14px 16px 16px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#6b7280;margin-bottom:5px">Outreach</div>
+          <div style="font-size:16px;line-height:1.45;color:#e2e8f0">Summer Electronics Workshop, St. Mary&rsquo;s Malankara High School, Mumbai</div>
+        </figcaption>
+      </button>
+
+      <button type="button" class="gallery-card" data-album="emaking">
+        <div class="gallery-thumb">
+          <img src="Electronic%20Making%20Workshop/vlcsnap-2026-09-29-20h44m44s839.png" alt="Electronic Making Workshop" class="gallery-img">
+          <span class="gallery-count"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>4</span>
+        </div>
+        <figcaption style="padding:14px 16px 16px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#6b7280;margin-bottom:5px">Outreach</div>
+          <div style="font-size:16px;line-height:1.45;color:#e2e8f0">Electronic Making Workshop</div>
+        </figcaption>
+      </button>
+
+      <button type="button" class="gallery-card" data-album="dhh">
+        <div class="gallery-thumb">
+          <img src="DHH/Screenshot%202026-09-29%20220059.png" alt="Online library for Deaf and Hard of Hearing" class="gallery-img">
+          <span class="gallery-count"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>3</span>
+        </div>
+        <figcaption style="padding:14px 16px 16px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#6b7280;margin-bottom:5px">Project</div>
+          <div style="font-size:16px;line-height:1.45;color:#e2e8f0">Online library for Deaf and Hard of Hearing</div>
+        </figcaption>
+      </button>
+
+      <button type="button" class="gallery-card" data-album="cale">
+        <div class="gallery-thumb">
+          <img src="CALE/CALE.png" alt="Critical Action Learning Exchange" class="gallery-img">
+          <span class="gallery-count"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>4</span>
+        </div>
+        <figcaption style="padding:14px 16px 16px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#6b7280;margin-bottom:5px">Project</div>
+          <div style="font-size:16px;line-height:1.45;color:#e2e8f0">Critical Action Learning Exchange (CALE)</div>
+        </figcaption>
+      </button>
+
+      <button type="button" class="gallery-card" data-album="wise">
+        <div class="gallery-thumb">
+          <img src="WiSE/Screenshot%202026-09-29%20220532.png" alt="WiSE outreach workshop" class="gallery-img">
+          <span class="gallery-count"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>4</span>
+        </div>
+        <figcaption style="padding:14px 16px 16px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#6b7280;margin-bottom:5px">Outreach</div>
+          <div style="font-size:16px;line-height:1.45;color:#e2e8f0">WiSE &mdash; Women in Science and Engineering, 2024</div>
+        </figcaption>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section-divider">
+    <h2 class="section-title" style="margin-bottom:20px">Contact</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+      <div class="card">
+        <h3 class="sub-head" style="text-align:center;margin-bottom:12px">Email</h3>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center">
+          <a href="mailto:nisumba_soodhani@iitb.ac.in" style="font-family:'IBM Plex Mono',monospace;font-size:14px"><span style="display:block">nisumba_soodhani</span><span style="display:block">@iitb.ac.in</span></a>
+          <a href="mailto:nisumba@gmail.com" style="font-family:'IBM Plex Mono',monospace;font-size:14px">nisumba@gmail.com</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="sub-head" style="text-align:center;margin-bottom:12px">Office</h3>
+        <p style="margin:0;font-size:15.5px;line-height:1.6;color:#cbd5e1;text-align:center">Centre for Educational Technology, IIT Bombay<br>Powai, Mumbai 400076, India</p>
+      </div>
+      <div class="card">
+        <h3 class="sub-head" style="text-align:center;margin-bottom:12px">Academic Profiles</h3>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:15.5px;align-items:center;text-align:center">
+          <a href="https://scholar.google.com/citations?user=GRoQLHwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://orcid.org/0009-0003-6375-5582" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://www.linkedin.com/in/nisumba-soodhani/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.researchgate.net/profile/Nisumba-Soodhani-Kamaraj" target="_blank" rel="noopener">ResearchGate</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="sub-head" style="text-align:center;margin-bottom:12px">Languages</h3>
+        <ul style="margin:0;padding:0;list-style:none;font-size:15.5px;line-height:1.8;color:#cbd5e1;text-align:center">
+          <li>Tamil (Native)</li>
+          <li>English (Full proficiency)</li>
+          <li>Hindi (Elementary)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer style="border-top:1px solid #333;background:#111">
+  <div style="max-width:1120px;margin:0 auto;padding:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:14px;color:#6b7280">
+    <span>&copy; 2026 Nisumba Soodhani K</span>
+    <span style="font-family:'IBM Plex Mono',monospace">Last updated September 2026</span>
+  </div>
+</footer>
+
+<!-- ============ PROJECT MODAL ============ -->
+<div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="pm-heading">
+  <div class="modal-backdrop" data-close></div>
+  <div class="project-modal-panel">
+    <button type="button" class="modal-close" data-close aria-label="Close">&times;</button>
+    <div class="pm-body" id="pm-body"></div>
+  </div>
+</div>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="modal-backdrop" data-close></div>
+  <div class="lightbox-stage">
+    <button type="button" class="modal-close" data-close aria-label="Close">&times;</button>
+    <button type="button" class="lb-nav lb-prev" id="lb-prev" aria-label="Previous photo">&#8249;</button>
+    <img class="lightbox-img" id="lb-img" alt="">
+    <button type="button" class="lb-nav lb-next" id="lb-next" aria-label="Next photo">&#8250;</button>
+    <div class="lightbox-caption">
+      <div class="lb-title" id="lb-title"></div>
+      <div class="lb-count" id="lb-count"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROJECT DETAIL CONTENT ============ -->
+<!-- Each block below is the full text shown in the pop-up for that project.
+     Edit the matching block to update a project's pop-up. -->
+<div id="project-details" hidden>
+
+  <div data-detail="doctoral">
+    <img src="Project_files/Persistence%20in%20Collaborative%20Making.png" alt="Persistence in Collaborative Making" class="pm-hero">
+    <div class="pm-inner">
+      <h2 class="pm-title" id="pm-heading">Persistence in Collaborative Making</h2>
+      <div class="pm-tags"><span class="project-tag">Ongoing</span><span class="project-tag">Doctoral Research</span></div>
+      <div class="pm-meta">2022 – present · IIT Bombay</div>
+      <p>My doctoral research investigates motivation and persistence in collaborative electronic making through video-based interaction analysis. It examines how learners navigate challenges during STEM design activities and collaborative problem solving.</p>
+      <p>Using process analysis and qualitative analysis, the work builds an understanding of the behavioural manifestations of persistence — <em>productive persistence</em> and <em>wheel spinning</em> — and identifies the interactional processes through which teams sustain productive persistence during extended making activities.</p>
+      <p class="pm-section-title">Supervisors</p>
+      <p>Prof. Ramkumar Rajendran and Prof. Sridhar Iyer, IIT Bombay.</p>
+      <p class="pm-section-title">Related output</p>
+      <div class="pm-links">
+        <a href="https://doi.org/10.22318/icls2025.652237" class="tag-btn" target="_blank" rel="noopener">ICLS 2025 — persistence in makerspaces</a>
+        <a href="https://doi.org/10.22318/icls2024.681581" class="tag-btn" target="_blank" rel="noopener">ICLS 2024 — self-efficacy</a>
+      </div>
+    </div>
+  </div>
+
+  <div data-detail="pijam">
+    <img src="Project_files/Pi%20Jam.png" alt="Pi Jam and Maker Factory" class="pm-hero">
+    <div class="pm-inner">
+      <h2 class="pm-title">Pi Jam and Maker Factory Ethnography</h2>
+      <div class="pm-tags"><span class="project-tag">Completed</span><span class="project-tag">Ethnography</span></div>
+      <div class="pm-meta">2023 – 2024 · IIT Bombay</div>
+      <p>Three months of fieldwork across Brihanmumbai Municipal Corporation (BMC) government schools in Mumbai, studying how low-cost makerspace programmes (Pi Jam and Maker Factory) are implemented for middle school learners.</p>
+      <p class="pm-section-title">Approach</p>
+      <p>Interviews with facilitators alongside classroom observations, analysed using thematic analysis to examine pedagogical practices, student engagement, gender inclusivity, and maker culture.</p>
+      <p class="pm-section-title">Supervisor</p>
+      <p>Prof. Ramkumar Rajendran, IIT Bombay.</p>
+      <p class="pm-section-title">Output</p>
+      <p>Findings presented as a poster at the 8th International Symposium on Academic Makerspaces (ISAM 2024), Sheffield, UK.</p>
+    </div>
+  </div>
+
+  <div data-detail="cale">
+    <img src="Project_files/CALE%20framework.png" alt="CALE framework" class="pm-hero">
+    <div class="pm-inner">
+      <h2 class="pm-title">Critical Action Learning Exchange (CALE)</h2>
+      <div class="pm-tags"><span class="project-tag">Completed</span><span class="project-tag">International</span></div>
+      <div class="pm-meta">2022 – 2023 · IIT Bombay &amp; University of Toronto</div>
+      <p>Contributed to an international research initiative engaging teachers across different countries in designing culturally responsive, action-oriented lessons that address social and environmental challenges.</p>
+      <p class="pm-section-title">Contribution</p>
+      <ul>
+        <li>Collected and analysed data from Indian teachers participating in CALE.</li>
+        <li>Facilitated workshops for Indian teachers on critical action pedagogy and curriculum design.</li>
+      </ul>
+      <p class="pm-section-title">Supervisor and PI</p>
+      <p>Supervisor: Prof. Chandan Dasgupta, IIT Bombay. PI: Prof. Jim Slotta, University of Toronto.</p>
+      <p class="pm-section-title">Related output</p>
+      <div class="pm-links">
+        <a href="https://doi.org/10.22318/icls2023.781947" class="tag-btn" target="_blank" rel="noopener">ICLS 2023 — teacher beliefs</a>
+        <a href="https://doi.org/10.22318/icls2023.795166" class="tag-btn" target="_blank" rel="noopener">ICLS 2023 — teacher PD</a>
+      </div>
+    </div>
+  </div>
+
+  <div data-detail="pwd">
+    <img src="Project_files/ISD%20PwD.png" alt="PwD Awareness Website" class="pm-hero">
+    <div class="pm-inner">
+      <h2 class="pm-title">PwD Website — Instructional System Design</h2>
+      <div class="pm-tags"><span class="project-tag">Completed</span><span class="project-tag">Accessibility</span></div>
+      <div class="pm-meta">2023 · IIT Bombay</div>
+      <p>Developed a website and instructional content to raise awareness among higher education functionaries about the needs of persons with disabilities.</p>
+      <p class="pm-section-title">Supervisors</p>
+      <p>Prof. Sridhar Iyer and Prof. Syaamantak Das, IIT Bombay.</p>
+      <p class="pm-section-title">Skills</p>
+      <p>Web development, instructional design.</p>
+    </div>
+  </div>
+
+  <div data-detail="dhh">
+    <img src="Project_files/DHH.jpg" alt="Online Inclusive Library for Deaf and Hard of Hearing" class="pm-hero">
+    <div class="pm-inner">
+      <h2 class="pm-title">Online Inclusive Library for Deaf and Hard of Hearing</h2>
+      <div class="pm-tags"><span class="project-tag">Completed</span><span class="project-tag">Inclusive Design</span></div>
+      <div class="pm-meta">2021 · IIT Bombay</div>
+      <p>Developed a Figma prototype of an online digital library for Deaf and Hard of Hearing (DHH) learners.</p>
+      <p>Created additional curricular resources including a picture book and home sign videos, integrated as core components of the application prototype for scientific concepts.</p>
+      <p>Conducted a study to evaluate the effectiveness of the prototype with target users, which affirmed its value — highlighting its significance in fostering inclusive education for DHH learners.</p>
+      <p class="pm-section-title">Supervisor</p>
+      <p>Prof. Chandan Dasgupta, IIT Bombay.</p>
+      <p class="pm-section-title">Skills</p>
+      <p>Figma.</p>
+      <p class="pm-section-title">Related output</p>
+      <div class="pm-links">
+        <a href="https://doi.org/10.1109/ICALT55010.2022.00091" class="tag-btn" target="_blank" rel="noopener">ICALT 2022 paper</a>
+        <a href="bib/soodhani2022dhhlibrary.bib" download class="tag-btn">BibTeX</a>
+      </div>
+    </div>
+  </div>
+
+<!-- MEMS project detail (commented out - uncomment to restore)
+  <div data-detail="mems">
+    <div class="img-placeholder" style="aspect-ratio:auto;height:230px;border-radius:14px 14px 0 0"><span>Wireless sensor node image 1200×675</span></div>
+    <div class="pm-inner">
+      <h2 class="pm-title">MEMS — Wireless Sensor Node for Electrical Machines and Drives</h2>
+      <div class="pm-tags"><span class="project-tag">Completed</span><span class="project-tag">Embedded Systems</span></div>
+      <div class="pm-meta">August 2020 – June 2021 · NIT Tiruchirappalli</div>
+      <p>The primary goal of this project was to develop sensors that can transfer the torque and speed related parameters of an electric drive to a real-time system webpage.</p>
+      <p>Working as a Junior Research Fellow, I learnt the fundamentals of and implemented the real-time wireless transmission of data from an ESP32 to a system webpage.</p>
+      <p class="pm-section-title">Skills</p>
+      <p>Web development, embedded systems.</p>
+    </div>
+  </div>
+-->
+
+<!-- SynRM project detail (commented out - uncomment to restore)
+  <div data-detail="motor">
+    <div class="img-placeholder" style="aspect-ratio:auto;height:230px;border-radius:14px 14px 0 0"><span>SynRM motor image 1200×675</span></div>
+    <div class="pm-inner">
+      <h2 class="pm-title">External Rotor Synchronous Reluctance Motor for an Electric-Assisted Bike</h2>
+      <div class="pm-tags"><span class="project-tag">Completed</span><span class="project-tag">ME Thesis</span></div>
+      <div class="pm-meta">July 2018 – June 2019 · College of Engineering Guindy</div>
+      <p>This project developed an external rotor synchronous reluctance motor for e-bike application. The motor is fed from a 48 V source and rated at 250 W. A synchronous motor was preferred as it is best suited to low-speed applications, and the outer-rotor configuration allows it to be used as a direct drive — an advantage over the inner-rotor arrangement.</p>
+      <p>Dimensions were derived from the basic torque equations and the relations governing electric and magnetic loading. The motor was then modelled in simulation software (MagNet) and its characteristics obtained by post-processing. The best design from the analysis was prototyped, with the fabrication processes studied in detail before a suitable method was chosen.</p>
+      <p class="pm-section-title">Skills</p>
+      <p>Machine design.</p>
+    </div>
+  </div>
+-->
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var body = document.body;
+  var lastFocus = null;
+
+  /* ---------- Affiliation logos: fall back to a monogram until the file is added ---------- */
+  document.querySelectorAll('.affil-logo img').forEach(function (img) {
+    function useMonogram() {
+      img.style.display = 'none';
+      var mono = img.nextElementSibling;
+      if (mono) { mono.style.display = 'flex'; }
+    }
+    img.addEventListener('error', useMonogram);
+    if (img.complete && img.naturalWidth === 0) { useMonogram(); }
+  });
+
+  /* ---------- Mobile nav ---------- */
+  var navToggle = document.getElementById('nav-toggle');
+  var navMenu = document.getElementById('nav-menu');
+
+  function setNav(open) {
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (open) { navMenu.setAttribute('data-open', 'true'); }
+    else { navMenu.removeAttribute('data-open'); }
+  }
+
+  navToggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    setNav(navToggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  navMenu.addEventListener('click', function (e) {
+    if (e.target.classList.contains('nav-link')) { setNav(false); }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (navMenu.getAttribute('data-open') === 'true' && !navMenu.contains(e.target)) { setNav(false); }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) { setNav(false); }
+  });
+
+  /* ---------- Modal shell ---------- */
+  function openModal(el) {
+    lastFocus = document.activeElement;
+    el.setAttribute('data-open', 'true');
+    body.classList.add('modal-open');
+  }
+
+  function closeModal(el) {
+    el.removeAttribute('data-open');
+    body.classList.remove('modal-open');
+    if (lastFocus && lastFocus.focus) { lastFocus.focus(); }
+  }
+
+  /* ---------- Project pop-up ---------- */
+  var projectModal = document.getElementById('project-modal');
+  var pmBody = document.getElementById('pm-body');
+  var details = document.getElementById('project-details');
+
+  document.querySelectorAll('.project-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var key = card.getAttribute('data-project');
+      var source = details.querySelector('[data-detail="' + key + '"]');
+      if (!source) { return; }
+      pmBody.innerHTML = source.innerHTML;
+      projectModal.querySelector('.project-modal-panel').scrollTop = 0;
+      openModal(projectModal);
+      projectModal.querySelector('.modal-close').focus();
+    });
+  });
+
+  projectModal.querySelectorAll('[data-close]').forEach(function (btn) {
+    btn.addEventListener('click', function () { closeModal(projectModal); });
+  });
+
+  /* ---------- Photo albums ----------
+     To add an album: drop the photos in a folder, uncomment its card in the
+     Gallery section above, and add a matching entry here. */
+  var albums = {
+    pijam: {
+      title: 'Pi Jam and Maker Factory, BMC Schools, Mumbai',
+      photos: ['Pi%20Jam/IMG_20231219_113205.jpg', 'Pi%20Jam/IMG_20231219_120300.jpg', 'Pi%20Jam/IMG_20231226_143015.jpg', 'Pi%20Jam/IMG_20231228_153743.jpg', 'Pi%20Jam/PC.jpeg', 'Pi%20Jam/WhatsApp%20Image%202024-01-10%20at%2021.39.10.jpeg']
+    },
+    summer: {
+      title: 'Summer Electronics Workshop, St. Mary\u2019s Malankara High School, Mumbai',
+      photos: ['Summer%20Electronics%20Workshop/WhatsApp%20Image%202026-09-29%20at%2021.19.50%20%283%29.jpeg', 'Summer%20Electronics%20Workshop/WhatsApp%20Image%202026-09-29%20at%2021.19.50.jpeg', 'Summer%20Electronics%20Workshop/vlcsnap-2026-09-29-21h03m22s600.png', 'Summer%20Electronics%20Workshop/vlcsnap-2026-09-29-21h05m13s748.png', 'Summer%20Electronics%20Workshop/vlcsnap-2026-09-29-21h07m25s342.png', 'Summer%20Electronics%20Workshop/vlcsnap-2026-09-29-21h07m51s221.png']
+    },
+    emaking: {
+      title: 'Electronic Making Workshop',
+      photos: ['Electronic%20Making%20Workshop/vlcsnap-2026-09-29-20h44m44s839.png', 'Electronic%20Making%20Workshop/vlcsnap-2026-09-29-20h45m47s482.png', 'Electronic%20Making%20Workshop/vlcsnap-2026-09-29-20h47m35s982.png', 'Electronic%20Making%20Workshop/vlcsnap-2026-09-29-20h48m27s232.png']
+    },
+    dhh: {
+      title: 'Online library for Deaf and Hard of Hearing',
+      photos: ['DHH/Screenshot%202026-09-29%20220059.png', 'DHH/Study%20school.jpg', 'DHH/participant.jpg']
+    },
+    cale: {
+      title: 'Critical Action Learning Exchange (CALE)',
+      photos: ['CALE/CALE.png', 'CALE/IMG-20230318-WA0011.jpg', 'CALE/IMG-20230318-WA0015.jpg', 'CALE/vlcsnap-2026-09-29-21h52m22s258.png']
+    },
+    wise: {
+      title: 'WiSE \u2014 Women in Science and Engineering, 2024',
+      photos: ['WiSE/Screenshot%202026-09-29%20220532.png', 'WiSE/WISE.png', 'WiSE/WISE_1.jpeg', 'WiSE/WISE_2.png']
+    }
+  };
+
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbTitle = document.getElementById('lb-title');
+  var lbCount = document.getElementById('lb-count');
+  var current = { photos: [], captions: null, title: '', index: 0 };
+
+  function renderPhoto() {
+    var n = current.photos.length;
+    lbImg.src = current.photos[current.index];
+    lbImg.alt = current.title + ' \u2014 photo ' + (current.index + 1);
+    lbTitle.textContent = current.captions ? current.captions[current.index] : current.title;
+    lbCount.textContent = (current.index + 1) + ' / ' + n;
+    var multi = n > 1;
+    document.getElementById('lb-prev').style.display = multi ? 'flex' : 'none';
+    document.getElementById('lb-next').style.display = multi ? 'flex' : 'none';
+  }
+
+  function step(delta) {
+    var n = current.photos.length;
+    current.index = (current.index + delta + n) % n;
+    renderPhoto();
+  }
+
+  document.querySelectorAll('.gallery-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var album = albums[card.getAttribute('data-album')];
+      if (!album || !album.photos || album.photos.length === 0) { return; }
+      current = { photos: album.photos, captions: album.captions || null, title: album.title, index: 0 };
+      renderPhoto();
+      openModal(lightbox);
+      lightbox.querySelector('.modal-close').focus();
+    });
+  });
+
+  document.getElementById('lb-prev').addEventListener('click', function () { step(-1); });
+  document.getElementById('lb-next').addEventListener('click', function () { step(1); });
+
+  lightbox.querySelectorAll('[data-close]').forEach(function (btn) {
+    btn.addEventListener('click', function () { closeModal(lightbox); });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (lightbox.getAttribute('data-open') === 'true') {
+      if (e.key === 'Escape') { closeModal(lightbox); }
+      if (e.key === 'ArrowLeft') { step(-1); }
+      if (e.key === 'ArrowRight') { step(1); }
+      return;
+    }
+    if (e.key !== 'Escape') { return; }
+    if (projectModal.getAttribute('data-open') === 'true') {
+      closeModal(projectModal);
+    } else if (navMenu.getAttribute('data-open') === 'true') {
+      setNav(false);
+      navToggle.focus();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
